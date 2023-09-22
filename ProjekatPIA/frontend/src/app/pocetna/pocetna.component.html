@@ -1,0 +1,74 @@
+<div class="container">
+    <div>
+        <form class="header">
+            <table>
+                <tr>
+                    <td>Korisnicko ime:</td>
+                    <td><input type="text" name="korIme" [(ngModel)]="korIme"></td>
+                </tr>
+                <tr>
+                    <td>Lozinka:</td>
+                    <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button (click)="login()">Login</button>
+                    </td>
+                    </tr>
+            </table>
+            <output type="text" value="{{poruka}}" style="color: red;"></output>
+            <br/>
+            <output type="text">Ukoliko nemate nalog mozete se registrovati klikom na link: <a routerLink="registracija">registracija</a></output>
+        </form>
+        <hr class="linija"/>
+        <div class="mainContainer">
+            <div class="main">
+                <h1 style="text-align: center;">Dobrodosli na sajt za renoviranje objekata</h1>
+                <h2 style="text-align: center;">Agencije</h2>
+                <div class="pretraga">
+                    <div>
+                        Pretraga po nazivu:
+                        <input type="text" name="pretragaPoNazivu" [(ngModel)]="pretragaPoNazivu">
+                        <br/>
+                        Pretraga po adresi:
+                        <input type="text" name="pretragaPoAdresi" [(ngModel)]="pretragaPoAdresi">
+                        <br/>
+                        <button (click)="pretrazi()">Pretrazi</button>
+                    </div>
+                    <div>
+                        Sortiraj po nazivu:
+                        <button (click)="sortirajOpadajuce('naziv')">Opadajuce</button>
+                        <button (click)="sortirajRastuce('naziv')">Rastuce</button>
+                        <br/>
+                        Sortiraj po adresi:
+                        <button (click)="sortirajOpadajuce('adresa')">Opadajuce</button>
+                        <button (click)="sortirajRastuce('adresa')">Rastuce</button>
+                    </div>
+                </div>
+                <div class="tabelaContainer">
+                    <table class="tabela">
+                        <tr>
+                            <th></th>
+                            <th>Naziv</th>
+                            <th>Opis</th>
+                        </tr>
+                        <tr *ngFor="let a of agencije">
+                            <td *ngIf="a.slika!=null&&a.slika!=''">
+                                <img [src]="a.slika" height="70px !important" width="70px !important">
+                            </td>
+                            <td *ngIf="a.slika==null || a.slika==''">
+                                <img src="assets/profilna.jpg" height="70px !important" width="70px !important">
+                            </td>
+                            <td>{{a.nazivAgencije}}</td>
+                            <td>{{a.opisAgencije}}</td>
+                            <td><a (click)="detalji(a)" class="link">Detaljnije</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

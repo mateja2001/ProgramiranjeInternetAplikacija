@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "6481dafb98584c949824c19c"
+  },
+  "agencija": "sestaAgencija",
+  "brojRadnika": 6,
+  "brojZaposlenih": 6,
+  "brojRadnihMesta": 6,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648340eac963210b47ae38d0"
+  },
+  "agencija": "prvaAgencija",
+  "brojRadnika": 4,
+  "brojZaposlenih": 4,
+  "brojRadnihMesta": 6,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64834123c963210b47ae38dd"
+  },
+  "agencija": "drugaAgencija",
+  "brojRadnika": 1,
+  "brojZaposlenih": 1,
+  "brojRadnihMesta": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483413fc963210b47ae38ea"
+  },
+  "agencija": "petaAgencija",
+  "brojRadnika": 1,
+  "brojZaposlenih": 1,
+  "brojRadnihMesta": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64906d78e72c3fe4a8889337"
+  },
+  "agencija": "cetvrtaAgencija",
+  "brojRadnika": 3,
+  "brojZaposlenih": 3,
+  "brojRadnihMesta": 3,
+  "__v": 0
+}]

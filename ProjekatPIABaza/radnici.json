@@ -1,0 +1,181 @@
+[{
+  "_id": {
+    "$oid": "6481db4f98584c949824c1aa"
+  },
+  "ime": "Radnik62",
+  "prezime": "Radnik62",
+  "mejl": "radnik62@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "zidar",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6481eaa3ebc25b139bfb1395"
+  },
+  "ime": "Radnik63",
+  "prezime": "Radnik63",
+  "mejl": "radnik63@radnik.com",
+  "telefon": "060111333",
+  "strucnost": "bravar",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6482feaff54cfe96090101c2"
+  },
+  "ime": "Radnik64",
+  "prezime": "Radnik64",
+  "mejl": "radnik64@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "stolar",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64830043f54cfe96090101f4"
+  },
+  "ime": "Radnik61",
+  "prezime": "Radnik61",
+  "mejl": "radnik61@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "vodoinstalater",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64830a9cf54cfe960901023d"
+  },
+  "ime": "Radnik65",
+  "prezime": "Radnik65",
+  "mejl": "radnik65@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "keramicar",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648340eac963210b47ae38d2"
+  },
+  "ime": "Radnik11",
+  "prezime": "Radnik11",
+  "mejl": "radnik11@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "moler",
+  "agencija": "prvaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64834123c963210b47ae38df"
+  },
+  "ime": "Radnik21",
+  "prezime": "Radnik21",
+  "mejl": "radnik21@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "moler",
+  "agencija": "drugaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6483413fc963210b47ae38ec"
+  },
+  "ime": "Radnik51",
+  "prezime": "Radnik51",
+  "mejl": "radnik51@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "moler",
+  "agencija": "petaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648341bcc963210b47ae3903"
+  },
+  "ime": "Radnik12",
+  "prezime": "Radnik12",
+  "mejl": "radnik12@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "zidar",
+  "agencija": "prvaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648e1f76c62729f227cf5ba0"
+  },
+  "ime": "Radnik13",
+  "prezime": "Radnik13",
+  "mejl": "radnik13@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "stolar",
+  "agencija": "prvaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648e2020c62729f227cf5bc9"
+  },
+  "ime": "Radnik14",
+  "prezime": "Radnik14",
+  "mejl": "radnik14@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "vodoinstalater",
+  "agencija": "prvaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64906e93e72c3fe4a8889379"
+  },
+  "ime": "Radnik41",
+  "prezime": "Radnik41",
+  "mejl": "radnik41@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "moler",
+  "agencija": "cetvrtaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64907134e72c3fe4a88893b7"
+  },
+  "ime": "Radnik42",
+  "prezime": "Radnik42",
+  "mejl": "radnik42@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "zidar",
+  "agencija": "cetvrtaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64908e35e72c3fe4a88897e3"
+  },
+  "ime": "Radnik66",
+  "prezime": "Radnik66",
+  "mejl": "radnik66@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "zidar",
+  "agencija": "sestaAgencija",
+  "objekat": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64918ccc1d2409f2faaa6746"
+  },
+  "ime": "Radnik43",
+  "prezime": "Radnik43",
+  "mejl": "radnik43@radnik.com",
+  "telefon": "060111222",
+  "strucnost": "keramicar",
+  "agencija": "cetvrtaAgencija",
+  "objekat": null,
+  "__v": 0
+}]

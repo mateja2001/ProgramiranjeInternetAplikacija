@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadPoslovi()">Nazad na poslove</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Pregled ponude</h2>
+            <div>
+                Za Vas objekat: {{objekat.tip}} na adresi: {{objekat.adresa}}
+                <br/>
+                Agencija {{nazivAgencije}} je prihvatila Vas zahtev i poslala ponudu u iznosu od: {{posao.ponuda}} din.
+                <br>
+                <button (click)="prihvati()">Prihvati ponudu</button>
+                <button (click)="odbij()">Odbij ponudu</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

@@ -1,0 +1,167 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                Lozinku mozete promeniti <a (click)="promenaLozinke()" class="link">ovde.</a>
+                <br/>
+                Novog korisnika mozete dodati <a (click)="dodajKorisnika()" class="link">ovde.</a>    
+            </div>
+            <div>
+                <output type="text">{{admin.ime}} {{admin.prezime}} </output>
+                <button (click)="logout()" class="logout">Logout</button>
+            </div>    
+        </div>
+        <hr class="linija"/>
+        <div class="main">
+            <h1>Dobrodosli</h1>
+            <div *ngIf="klijenti.length>0">
+                <h3>Klijenti</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Ime i Prezime</th>
+                        <th>Mejl</th>
+                        <th>Telefon</th>
+                    </tr>
+                    <tr *ngFor="let a of klijenti">
+                        <td *ngIf="a.slika!=null&&a.slika!=''">
+                            <img [src]="a.slika" height="50px !important" width="50px !important">
+                        </td>
+                        <td *ngIf="a.slika==null || a.slika==''">
+                            <img src="assets/profilna.jpg" height="50px !important" width="50px !important">
+                        </td>
+                        <td>{{a.ime}} {{a.prezime}}</td>
+                        <td class="tabela">{{a.mejl}}</td>
+                        <td>{{a.telefon}}</td>
+                        <td><button (click)="azurirajProfil(a)">&#9998;</button></td>
+                        <td><button (click)="obrisiKorisnika(a)">&#10060;</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="agencije.length>0">
+                <h3>Agencije</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Naziv</th>
+                        <th>Adresa</th>
+                        <th>Mejl</th>
+                        <th>Telefon</th>
+                        <th>Opis</th>
+                    </tr>
+                    <tr *ngFor="let a of agencije">
+                        <td *ngIf="a.slika!=null&&a.slika!=''">
+                            <img [src]="a.slika" height="50px !important" width="50px !important">
+                        </td>
+                        <td *ngIf="a.slika==null || a.slika==''">
+                            <img src="assets/profilna.jpg" height="50px !important" width="50px !important">
+                        </td>
+                        <td class="tabela">{{a.nazivAgencije}}</td>
+                        <td class="tabela">{{a.adresaAgencije}}</td>
+                        <td class="tabela">{{a.mejl}}</td>
+                        <td class="tabela">{{a.telefon}}</td>
+                        <td class="tabela">{{a.opisAgencije}}</td>
+                        <td class="tabela"><a class="link" (click)="zaposleniAgencija(a)">Radnici</a></td>
+                        <td><button (click)="azurirajProfil(a)">&#9998;</button></td>
+                        <td><button (click)="obrisiKorisnika(a)">&#10060;</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="zahteviAgencije.length>0">
+                <h3>Zahtevi za registracijom-agencije</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Naziv</th>
+                        <th>Adresa</th>
+                        <th>Mejl</th>
+                        <th>Telefon</th>
+                        <th>Opis</th>
+                    </tr>
+                    <tr *ngFor="let a of zahteviAgencije">
+                        <td *ngIf="a.slika!=null&&a.slika!=''">
+                            <img [src]="a.slika" height="50px !important" width="50px !important">
+                        </td>
+                        <td *ngIf="a.slika==null || a.slika==''">
+                            <img src="assets/profilna.jpg" height="50px !important" width="50px !important">
+                        </td>
+                        <td class="tabela">{{a.nazivAgencije}}</td>
+                        <td class="tabela">{{a.adresaAgencije}}</td>
+                        <td class="tabela">{{a.mejl}}</td>
+                        <td class="tabela">{{a.telefon}}</td>
+                        <td class="tabela">{{a.opisAgencije}}</td>
+                        <td><button (click)="prihvatiZahtev(a.korisnickoIme)">&#9989;</button></td>
+                        <td><button (click)="odbijZahtev(a.korisnickoIme)">&#10060;</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="zahteviKlijenti.length>0">
+                <h3>Zahtevi za registracijom-klijenti</h3>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Ime i Prezime</th>
+                        <th>Mejl</th>
+                        <th>Telefon</th>
+                    </tr>
+                    <tr *ngFor="let a of zahteviKlijenti">
+                        <td *ngIf="a.slika!=null&&a.slika!=''">
+                            <img [src]="a.slika" height="50px !important" width="50px !important">
+                        </td>
+                        <td *ngIf="a.slika==null || a.slika==''">
+                            <img src="assets/profilna.jpg" height="50px !important" width="50px !important">
+                        </td>
+                        <td>{{a.ime}} {{a.prezime}}</td>
+                        <td>{{a.mejl}}</td>
+                        <td>{{a.telefon}}</td>
+                        <td><button (click)="prihvatiZahtev(a.korisnickoIme)">&#9989;</button></td>
+                        <td><button (click)="odbijZahtev(a.korisnickoIme)">&#10060;</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="poslovi.length>0">
+                <h3>Poslovi</h3>
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Agencija</th>
+                        <th>Korisnik</th>
+                        <th>Pocetka radova</th>
+                        <th>Kraja radova</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr *ngFor="let p of poslovi">
+                        <td>{{p.agencija}}</td>
+                        <td>{{p.korisnik}}</td>
+                        <td>{{p.datumPocetka}}</td>
+                        <td>{{p.datumKraja}}</td>
+                        <td>{{p.status}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="zahteviOtkazivanje.length>0">
+                <h3>Zahtevi za otkazivanjem poslova</h3>
+                <table style="text-align: center;">
+                    <tr>
+                        <th class="tabela">Agencija</th>
+                        <th>Korisnik</th>
+                        <th>Pocetka radova</th>
+                        <th>Kraja radova</th>
+                        <th>Razlog otkazivanja</th>
+                    </tr>
+                    <tr *ngFor="let p of zahteviOtkazivanje">
+                        <td class="tabela">{{p.agencija}}</td>
+                        <td>{{p.korisnik}}</td>
+                        <td>{{p.datumPocetka}}</td>
+                        <td>{{p.datumKraja}}</td>
+                        <td>{{p.razlogOtkazivanja}}</td>
+                        <td><button (click)="prihvatiZahtevOtkaz(p)">&#9989;</button></td>
+                        <td><button (click)="odbijZahtevOtkaz(p)">&#10060;</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

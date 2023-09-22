@@ -1,0 +1,31 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const klijent_controller_1 = require("../controllers/klijent.controller");
+const klijentRouter = express_1.default.Router();
+klijentRouter.route('/azurirajPodatke').post((req, res) => new klijent_controller_1.KlijentController().azurirajPodatke(req, res));
+klijentRouter.route('/azurirajPodatkeISliku').post((req, res) => new klijent_controller_1.KlijentController().azurirajPodatkeISliku(req, res));
+klijentRouter.route('/dohvatiObjekte').post((req, res) => new klijent_controller_1.KlijentController().dohvatiObjekte(req, res));
+klijentRouter.route('/dodajObjekat').post((req, res) => new klijent_controller_1.KlijentController().dodajObjekat(req, res));
+klijentRouter.route('/obrisiObjekat').post((req, res) => new klijent_controller_1.KlijentController().obrisiObjekat(req, res));
+klijentRouter.route('/izmeniObjekat').post((req, res) => new klijent_controller_1.KlijentController().izmeniObjekat(req, res));
+klijentRouter.route('/sveAgencije').get((req, res) => new klijent_controller_1.KlijentController().dohvatiSveAgencije(req, res));
+klijentRouter.route('/pretraziAgencije').post((req, res) => new klijent_controller_1.KlijentController().pretraziAgencije(req, res));
+klijentRouter.route('/objektiZaRenoviranje').post((req, res) => new klijent_controller_1.KlijentController().dohvatiObjekteZaRenoviranje(req, res));
+klijentRouter.route('/zahtevSaradnja').post((req, res) => new klijent_controller_1.KlijentController().zahtevZaSaradnjom(req, res));
+klijentRouter.route('/dohvatiPoslove').post((req, res) => new klijent_controller_1.KlijentController().dohvatiPosloveKlijenta(req, res));
+klijentRouter.route('/dohvatiObjekat').post((req, res) => new klijent_controller_1.KlijentController().dohvatiObjekat(req, res));
+klijentRouter.route('/platiPosao').post((req, res) => new klijent_controller_1.KlijentController().platiPosao(req, res));
+klijentRouter.route('/dohvatiKorisnika').post((req, res) => new klijent_controller_1.KlijentController().dohvatiKorisnika(req, res));
+klijentRouter.route('/odbijPonudu').post((req, res) => new klijent_controller_1.KlijentController().odbijPonudu(req, res));
+klijentRouter.route('/prihvatiPonudu').post((req, res) => new klijent_controller_1.KlijentController().prihvatiPonudu(req, res));
+klijentRouter.route('/dohvatiKomentar').post((req, res) => new klijent_controller_1.KlijentController().dohvatiKomentar(req, res));
+klijentRouter.route('/dodajKomentar').post((req, res) => new klijent_controller_1.KlijentController().ostaviKomentar(req, res));
+klijentRouter.route('/izmeniKomentar').post((req, res) => new klijent_controller_1.KlijentController().izmeniKomentar(req, res));
+klijentRouter.route('/obrisiKomentar').post((req, res) => new klijent_controller_1.KlijentController().obirisiKomentar(req, res));
+klijentRouter.route('/zahtevOtkazivanje').post((req, res) => new klijent_controller_1.KlijentController().zahtevOtkazivanje(req, res));
+exports.default = klijentRouter;
+//# sourceMappingURL=klijent.router.js.map

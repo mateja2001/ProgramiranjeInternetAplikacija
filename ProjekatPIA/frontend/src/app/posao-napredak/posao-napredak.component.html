@@ -1,0 +1,77 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadPoslovi()">Nazad na poslove</a>
+            </div>
+            <div>
+                {{agencija.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Napredak renoviranja</h2>
+            <div>
+                Adresa: {{objekat.adresa}}
+                <br/>
+                Tip: {{objekat.tip}}
+                <br/>
+                Broj prostorija: {{objekat.brojProstorija}}
+                <br/>
+                Kvadratura: {{objekat.kvadratura}}
+            </div>
+            <div class="canvas">
+                <canvas #canvas width="600" height="400" style="outline: 1px solid black;"></canvas>
+            </div>
+            <div *ngIf="zaposleni!=null">
+                <div *ngIf="objekat.brojProstorija>zaposleni.brojRadnika&&zavrsen==false&&posao.brojRadnika==null">
+                    Trenutno nemate dovoljan broj slobodnih radnika.
+                    <br/>
+                    Trenutni broj slobodnih radnika: {{zaposleni.brojRadnika}}
+                </div>
+                <div *ngIf="posao.brojRadnika==null&&objekat.brojProstorija<=zaposleni.brojRadnika&&zavrsen==false">
+                    Morate prvo dodeliti objektu odgovarajuci broj radnika:
+                    <br/>
+                    Trenutni broj slobodnih radnika: {{zaposleni.brojRadnika}}
+                    <br/>
+                    <table style="text-align: center;">
+                        <tr>
+                            <th>Ime</th>
+                            <th>Prezime</th>
+                            <th>Telefon</th>
+                            <th>Strucnost</th>
+                        </tr>
+                        <tr *ngFor="let r of slobodniRadnici">
+                            <td>{{r.ime}}</td>
+                            <td>{{r.prezime}}</td>
+                            <td>{{r.telefon}}</td>
+                            <td>{{r.strucnost}}</td>
+                            <td><input type="checkbox" name="izabran" [(ngModel)]="r.izabran"></td>
+                        </tr>
+                    </table>
+                    <button (click)="dodeliRadnike()">Dodeli</button>
+                    <br/>
+                    <output type="text" style="color: red;">{{error}}</output>
+                </div>
+                <div *ngIf="posao.brojRadnika!=null&&zavrsen==false">
+                    Status prostorije mozete promeniti klikom na samu prostoriju.
+                </div>
+                <div *ngIf="zavrsen==true&&posao.brojRadnika!=null">
+                    Objekat je zavrsen, ceka se da korisnik plati radove.
+                    <br/>
+                    Ukoliko ne zelite da menjate objekat, oslobodite radnike:
+                    <br/>
+                    <button (click)="oslobodiRadnike()">Oslobodi</button>
+                </div>
+                <div *ngIf="zavrsen==true&&posao.brojRadnika==null">
+                    Objekat je zavrsen, ceka se da korisnik plati radove.
+                </div>
+            </div>
+            <div *ngIf="zaposleni==null">
+                Trenutno nemate zaposljenih radnika.
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

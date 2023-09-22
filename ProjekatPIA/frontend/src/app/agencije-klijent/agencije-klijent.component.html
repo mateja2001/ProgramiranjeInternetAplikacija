@@ -1,0 +1,60 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                 <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <div class="main">
+                <h2 style="text-align: center;">Agencije</h2>
+                <div class="pretraga">
+                    <div>
+                        Pretraga po nazivu:
+                        <input type="text" name="pretragaPoNazivu" [(ngModel)]="pretragaPoNazivu">
+                        <br/>
+                        Pretraga po adresi:
+                        <input type="text" name="pretragaPoAdresi" [(ngModel)]="pretragaPoAdresi">
+                        <br/>
+                        <button (click)="pretrazi()">Pretrazi</button>
+                    </div>
+                    <div>
+                        Sortiraj po nazivu:
+                        <button (click)="sortirajOpadajuce('naziv')">Opadajuce</button>
+                        <button (click)="sortirajRastuce('naziv')">Rastuce</button>
+                        <br/>
+                        Sortiraj po adresi:
+                        <button (click)="sortirajOpadajuce('adresa')">Opadajuce</button>
+                        <button (click)="sortirajRastuce('adresa')">Rastuce</button>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Naziv</th>
+                        <th>Opis</th>
+                    </tr>
+                    <tr *ngFor="let a of agencije">
+                        <td *ngIf="a.slika!=null&&a.slika!=''">
+                            <img [src]="a.slika" height="70px !important" width="70px !important">
+                        </td>
+                        <td *ngIf="a.slika==null || a.slika==''">
+                            <img src="assets/profilna.jpg" height="70px !important" width="70px !important">
+                        </td>
+                        <td>{{a.nazivAgencije}}</td>
+                        <td>{{a.opisAgencije}}</td>
+                        <td><a (click)="detalji(a)" class="link">Detaljnije</a></td>
+                        <td><a (click)="saradnja(a)" class="link">Zatrazi saradnju</a></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{error}}</output>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

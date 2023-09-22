@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "647725e95c3ac38365aa5346"
+  },
+  "korisnik": "zika",
+  "agencija": "prvaAgencija",
+  "objekat": "647349ce9d5f57f7f4ff7589",
+  "prihvacen": false,
+  "datumPocetka": "2023-06-01",
+  "datumKraja": "2023-06-20",
+  "status": "zahtev",
+  "placeno": false,
+  "ponuda": null,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null
+},{
+  "_id": {
+    "$oid": "64775e69d01e67922fa17098"
+  },
+  "korisnik": "zika",
+  "agencija": "petaAgencija",
+  "objekat": "6473c551f433421db85b0cde",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-11",
+  "datumKraja": "2023-06-18",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 20000,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647879ba7dfdc174b61ffd48"
+  },
+  "korisnik": "zika",
+  "agencija": "prvaAgencija",
+  "objekat": "6471dd0b31c772c4819dde6d",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-10",
+  "datumKraja": "2023-06-17",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 11111,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6479e5d3466e9089225ee99d"
+  },
+  "korisnik": "pera",
+  "agencija": "prvaAgencija",
+  "objekat": "6471dd0b31c772c4819dde6e",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-09",
+  "datumKraja": "2023-06-16",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 33333,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647c876f7611a0b9459034b7"
+  },
+  "korisnik": "zika",
+  "agencija": "sestaAgencija",
+  "objekat": "6474a5812e4377eadebf90c4",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-11",
+  "datumKraja": "2023-06-25",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 66666,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647efca4e80b2bff1d76887a"
+  },
+  "korisnik": "pera",
+  "agencija": "prvaAgencija",
+  "objekat": "6471dd0b31c772c4819dde6e",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-11",
+  "datumKraja": "2023-06-18",
+  "status": "aktivan",
+  "placeno": false,
+  "ponuda": 35000,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648324284a4caa48dff3bfbb"
+  },
+  "korisnik": "mika",
+  "agencija": "sestaAgencija",
+  "objekat": "648323e14a4caa48dff3bfa4",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-16",
+  "datumKraja": "2023-06-23",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 45000,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64832b4e21ac0aea32c53ca2"
+  },
+  "korisnik": "mika",
+  "agencija": "sestaAgencija",
+  "objekat": "648324164a4caa48dff3bfaa",
+  "prihvacen": true,
+  "datumPocetka": "2023-06-18",
+  "datumKraja": "2023-06-25",
+  "status": "zavrsen",
+  "placeno": true,
+  "ponuda": 15000,
+  "razlogOtkazivanja": null,
+  "brojRadnika": null,
+  "__v": 0
+}]

@@ -1,0 +1,77 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Moji objekti</h2>
+            <table *ngIf="mojiObjekti.length>0">
+                <tr>
+                    <th>Tip</th>
+                    <th>Adresa</th>
+                    <th class="tabela">Prostorije</th>
+                    <th>Kvadratura</th>
+                </tr>
+                <tr *ngFor="let o of mojiObjekti"  >
+                    <td>{{o.tip}}</td>
+                    <td class="tabela">{{o.adresa}}</td>
+                    <td>{{o.brojProstorija}}</td>
+                    <td>{{o.kvadratura}}</td>
+                    <td><a (click)="prikaziSkicu(o)" class="link">Skica</a></td>
+                    <td><a (click)="izmeniObjekat(o)" class="link">Izmeni</a></td>
+                    <td><button (click)="obrisiObjekat(o)">Obrisi</button></td>
+                </tr>
+            </table>
+            <h2>Dodaj novi objekat</h2>
+            <div>
+                Rucno dodaj objekat<input type="radio" name="nacin" value="rucno" [(ngModel)]="dodavanje" (change)="ocisti()">
+                Ucitaj objekat<input type="radio" name="nacin" value="ucitaj" [(ngModel)]="dodavanje" (change)="ocisti()">    
+            </div>
+            <form *ngIf="dodavanje=='rucno'">
+                <table>
+                    <tr>
+                        <td>Tip objekta:</td>
+                        <td>Kuca<input type="radio" value="kuca" name="tip" [(ngModel)]="tip">
+                            Stan<input type="radio" value="stan" name="tip" [(ngModel)]="tip">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adresa:</td>
+                        <td><input type="text" name="adresa" [(ngModel)]="adresa"></td>
+                    </tr>
+                    <tr>
+                        <td>Broj prostorija:</td>
+                        <td><input type="number" name="broj" [(ngModel)]="brojProstorija" (change)="promenaProstorija()"></td>
+                    </tr>
+                    <tr>
+                        <td>Kvadratura:</td>
+                        <td><input type="number" name="kvadratura" [(ngModel)]="kvadratura"></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{errorObjekat}}</output>
+                <br/>
+                <button (click)="dodajObjekat()">Dodaj objekat</button> 
+            </form>
+            <form *ngIf="dodavanje=='ucitaj'">
+                Ucitaj objekat putem .JSON fajla:
+                <br/>
+                <input type="file" accept=".JSON" (change)="ucitajObjekat($event)">
+                <br/>
+                <output type="text" style="color: red;">{{errorObjekat}}</output>
+                <br/>
+                <button (click)="dodajObjekat()">Dodaj objekat</button>
+            </form>
+            <div class="canvas">
+                <canvas #canvas  width="600" height="400" style="outline: 1px solid black;"></canvas> 
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

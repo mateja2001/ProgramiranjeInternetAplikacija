@@ -1,0 +1,24 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                Lozinku mozete promeniti <a (click)="promenaLozinke()" class="link">ovde.</a>
+            </div>
+            <div>
+                {{trenutniKorisnik.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <hr class="linija"/>
+        <div class="main">
+            <h1>Glavni meni</h1>
+            <a (click)="profil()" class="link" style="font-size:x-large;">Profil</a>
+            <br/>
+            <a class="link" style="font-size:x-large;" (click)="radnici()">Radnici</a>
+            <br/>
+            <a class="link" (click)="poslovi()" style="font-size:x-large;">Poslovi</a>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

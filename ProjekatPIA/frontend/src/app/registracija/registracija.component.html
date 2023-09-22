@@ -1,0 +1,115 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div *ngIf="admin=='admin'">
+                <a class="link" (click)="nazad()">Nazad na pocetnu</a>
+            </div>
+            <div *ngIf="admin!='admin'">
+                <a class="link" (click)="nazadGlavna()">Nazad</a>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <div class="main">
+                <H2>Registracija korisnika</H2>
+                <form>
+                    Izaberite tip korisnika:
+                    <br>
+                    Klijent:<input type="radio" name="tip" value="klijent" [(ngModel)]="tip">
+                    Agencija:<input type="radio" name="tip" value="agencija" [(ngModel)]="tip">
+                    <table *ngIf="tip=='klijent'">
+                        <tr>
+                            <td>Korisnicko ime</td>
+                            <td><input type="text" name="korIme" [(ngModel)]="korisnickoIme"></td>
+                        </tr>
+                        <tr>
+                            <td>Lozinka</td>
+                            <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+                        </tr>
+                        <tr>
+                            <td>Potvrda lozinke</td>
+                            <td><input type="password" name="potvrda" [(ngModel)]="potvrdaLozinke"></td>
+                        </tr>
+                        <tr>
+                            <td>Telefon</td>
+                            <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text" name="mejl" [(ngModel)]="mejl"></td>
+                        </tr>
+                        <tr>
+                            <td>Ime</td>
+                            <td><input type="text" name="ime" [(ngModel)]="ime"></td>
+                        </tr>
+                        <tr>
+                            <td>Prezime</td>
+                            <td><input type="text" name="prezime" [(ngModel)]="prezime"></td>
+                        </tr>
+                        <tr>
+                            <td>Dodajte sliku</td>
+                            <td><input type="file" accept=".png,.jpg,.jpeg" (change)="ucitajSliku($event)"></td>
+                        </tr>
+                        <tr>
+                            <div><img [src]="url" *ngIf="url"></div>
+                        </tr>
+                    </table>
+                    <table *ngIf="tip=='agencija'">
+                        <tr>
+                            <td>Korisnicko ime</td>
+                            <td><input type="text" name="korIme" [(ngModel)]="korisnickoIme"></td>
+                        </tr>
+                        <tr>
+                            <td>Lozinka</td>
+                            <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+                        </tr>
+                        <tr>
+                            <td>Potvrda lozinke</td>
+                            <td><input type="password" name="potvrda" [(ngModel)]="potvrdaLozinke"></td>
+                        </tr>
+                        <tr>
+                            <td>Telefon</td>
+                            <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text" name="mejl" [(ngModel)]="mejl"></td>
+                        </tr>
+                        <tr>
+                            <td>Naziv agencije</td>
+                            <td><input type="text" name="naziv" [(ngModel)]="nazivAgencije"></td>
+                        </tr>
+                        <tr>
+                            <td>Adresa</td>
+                            <td><input type="text" name="adresa" [(ngModel)]="adresaAgencije"></td>
+                        </tr>
+                        <tr>
+                            <td>Maticni broj</td>
+                            <td><input type="text" name="maticni" [(ngModel)]="maticniBrAgencije"></td>
+                        </tr>
+                        <tr>
+                            <td>Opis</td>
+                            <td><input type="text" name="opis" [(ngModel)]="opisAgencije"></td>
+                        </tr>
+                        <tr>
+                            <td>Dodajte sliku</td>
+                            <td><input type="file" accept=".png,.jpg" (change)="ucitajSliku($event)"></td>
+                        </tr>
+                        <tr>
+                            <div><img [src]="url" *ngIf="url"></div>
+                        </tr>
+                    </table>
+                    <button *ngIf="tip=='agencija'||tip=='klijent'"(click)="posaljiZahtev()">Posalji zahtev</button>
+                    <br/>
+                    <output  type="text" style="color: red;">{{errorSlika}}</output>
+                    <br/>
+                    <output  type="text" style="color: red;">{{error}}</output>
+                    <output  type="text" style="color: green;">{{potvrda}}</output>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+    <div>
+        <div *ngIf="skica=='skica'" class="header">
+            <div>
+                <a class="link" (click)="nazadNaObjekte()">Nazad na objekte</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div *ngIf="skica=='napredak'" class="header">
+            <div>
+                <a class="link" (click)="nazadNaPoslove()">Nazad na poslove</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2 *ngIf="skica=='skica'">Skica objekta</h2>
+            <h2 *ngIf="skica=='napredak'">Napredak objekta</h2>
+            <div class="canvas">
+                <canvas #canvas width="600" height="400" style="outline: 1px solid black;"></canvas>
+            </div>
+            <div *ngIf="skica=='napredak'">
+                <div *ngIf="zavrsen==true">
+                    Platite agenciji i zavrsite radove
+                    <button (click)="platiPosao()">Plati</button>
+                </div>
+                <div *ngIf="zavrsen==false">
+                    Ukoliko zelite da otkazete posao to mozete uraditi 
+                    <a class="link" (click)="otkazi()">ovde</a>
+                    <form *ngIf="otkazivanje==true">
+                        Navedite razlog otkazivanja:
+                        <input  type="text" name="razlog" [(ngModel)]="razlog">
+                        <br/>
+                        <output type="text" style="color: red;">{{errorOtkazivanje}}</output>
+                        <br/>
+                        <button (click)="zahtevZaOtkazivanje()">Otkazi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

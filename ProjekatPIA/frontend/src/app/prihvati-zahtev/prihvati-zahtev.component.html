@@ -1,0 +1,53 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadPoslovi()">Nazad na poslove</a>
+            </div>
+            <div>
+                {{agencija.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Zahtev klijenta</h2>
+            <h3>Podaci o klijentu</h3>
+            <div class="klijent">
+                <img *ngIf="korisnik.slika!=null&&korisnik.slika!=''" [src]="korisnik.slika" height="70px !important" width="70px !important">
+                <img src="assets/profilna.jpg" *ngIf="korisnik.slika==null || korisnik.slika==''" height="70px !important" width="70px !important">
+                <br/>
+                {{korisnik.ime}} {{korisnik.prezime}}
+                <br/>
+                tel: {{korisnik.telefon}}
+                <br/>
+                mejl: {{korisnik.mejl}}
+            </div>
+            <h3>Podaci o objektu</h3>
+            <div class="objekat">
+                Adresa: {{objekat.adresa}}
+                <br/>
+                Tip: {{objekat.tip}}
+                <br/>
+                Broj prostorija:{{objekat.brojProstorija}}
+                <br/>
+                Kvadratura: {{objekat.kvadratura}}
+                <br/>
+                Datum pocetka radova: {{zahtev.datumPocetka}}
+                <br/>
+                Datum zavrsetka radova: {{zahtev.datumKraja}}
+                <br/>
+                Ukoliko zelite da prihvatite zahtev, unesite iznos novcane nadoknade:
+                <div>
+                    <input type="number" name="nadoknada" [(ngModel)]="nadoknada">
+                    <br/>
+                    <output type="text" style="color: red;">{{error}}</output>
+                    <br/>
+                    <button (click)="prihvatiZahtev()">Prihvati</button>
+                    <button (click)="odbijZahtev()">Odbij</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

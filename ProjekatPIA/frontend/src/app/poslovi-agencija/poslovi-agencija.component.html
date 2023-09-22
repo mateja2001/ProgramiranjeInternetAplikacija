@@ -1,0 +1,58 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+            </div>
+            <div>
+                {{agencija.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Zahtevi klijenata</h2>
+            <div>
+                <table *ngIf="zahtevi.length>0">
+                    <tr>
+                        <th>Klijent</th>
+                        <th>Objekat</th>
+                        <th>Datum pocetka</th>
+                        <th>Datum kraja</th>
+                    </tr>
+                    <tr *ngFor="let z of zahtevi">
+                        <td style="word-wrap: break-word; white-space: pre-wrap;">{{podaciKorisnik(z.korisnik)}}</td>
+                        <td style="word-wrap: break-word; white-space: pre-wrap;" class="tabela">{{podaciObjekat(z.objekat)}}</td>
+                        <td>{{z.datumPocetka}}</td>
+                        <td>{{z.datumKraja}}</td>
+                        <td>
+                            <a *ngIf="z.ponuda==null" class="link" (click)="prihvatiZahtev(z)">Pregled zahteva</a>
+                            <output type="text" *ngIf="z.ponuda!=null">Ponuda poslata</output>
+                        </td>
+                    </tr>
+                </table>
+                <output type="text" *ngIf="zahtevi.length==0">Trenutno nemate novih zahteva.</output>
+            </div>
+            <h2>Aktivni poslovi</h2>
+            <div>
+                <table *ngIf="aktivniPoslovi.length>0">
+                    <tr>
+                        <th>Klijent</th>
+                        <th>Objekat</th>
+                        <th>Datum pocetka</th>
+                        <th>Datum kraja</th>
+                    </tr>
+                    <tr *ngFor="let a of aktivniPoslovi">
+                        <td style="word-wrap: break-word; white-space: pre-wrap;">{{podaciKorisnik(a.korisnik)}}</td>
+                        <td style="word-wrap: break-word; white-space: pre-wrap;" class="tabela">{{podaciObjekat(a.objekat)}}</td>
+                        <td>{{a.datumPocetka}}</td>
+                        <td>{{a.datumKraja}}</td>
+                        <td><a class="link" (click)="prikaziNapredak(a)">Prikazi napredak</a></td>
+                    </tr>
+                </table>
+                <output type="text" *ngIf="aktivniPoslovi.length==0">Trenutno nemate aktivnih poslova.</output>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+            </div> 
+            <div *ngIf="trenutniKorisnik.tip!='agencija'">
+                {{trenutniKorisnik.ime}} {{trenutniKorisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+            <div *ngIf="trenutniKorisnik.tip=='agencija'">
+                {{trenutniKorisnik.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="mainContainer">
+            <div class="main">
+                <h2>Forma za promenu lozinke</h2>
+                <form>
+                    <table>
+                        <tr>
+                            <td>Unesite staru lozinku:</td>
+                            <td><input type="password" name="staralozinka" [(ngModel)]="staraLozinkaUnos"></td>
+                        </tr>
+                        <tr>
+                            <td>Unesite novu lozinku:</td>
+                            <td><input type="password" name="novalozinka" [(ngModel)]="novaLozinka"></td>
+                        </tr>
+                        <tr>
+                            <td>Potvrdite novu lozinku:</td>
+                            <td><input type="password" name="potvrdalozinke" [(ngModel)]="potvrdaNoveLozinke"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button (click)="promeniLozinku()">Prihvati</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <output style="color: red;">{{error}}</output>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>    
+</div>

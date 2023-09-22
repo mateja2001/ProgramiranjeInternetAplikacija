@@ -1,0 +1,36 @@
+
+{
+        "korisnik" : null,
+        "tip" : "kuca",
+		"adresa": "Srbija,Pirot,Ustanicka 45",
+        "brojProstorija" : 3,
+		"kvadratura": 65,
+		"prostorije":[{
+			"xKoord":50,
+			"yKoord":50,
+			"duzina":100,
+			"sirina":100,
+			"xVrata":150,
+			"yVrata":100,
+			"status":"ne radi se"
+		},
+		{
+			"xKoord":50,
+			"yKoord":150,
+			"duzina":100,
+			"sirina":100,
+			"xVrata":150,
+			"yVrata":200,
+			"status":"ne radi se"
+		},
+		{
+			"xKoord":150,
+			"yKoord":75,
+			"duzina":75,
+			"sirina":150,
+			"xVrata":225,
+			"yVrata":150,
+			"status":"ne radi se"
+		}
+		]
+}

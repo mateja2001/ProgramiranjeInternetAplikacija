@@ -1,0 +1,52 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazad()">Nazad na pocetnu</a>
+            </div>
+            <div>
+                <output type="text">{{admin.ime}} {{admin.prezime}} </output>
+                <button (click)="logout()">Logout</button>
+            </div> 
+        </div>
+        <div class="main">
+            <h2>Zaposleni agencije: {{agencija.nazivAgencije}}</h2>
+            <div *ngIf="zahtevRadnaMesta!=null" style="font-size: larger;">
+                Agencija je poslala zahtev za otvaranje {{zahtevRadnaMesta.brojMesta}} novih radnih mesta.
+                <button (click)="prihvatiZahtevRadnaMesta()">&#9989;</button>
+                <button (click)="odbijZahtevRadnaMesta()">&#10060;</button>
+            </div>
+            <div style="font-size: larger;">
+                Novog radnika mozete dodati <a class="link" (click)="dodajRadnika()">ovde</a>
+            </div>
+            <div *ngIf="zaposleni==null||(zaposleni!=null&&radnici.length==0)" style="font-size: larger;">
+                Agencija trenutno nema zaposlenih.
+            </div>
+            <h3>Radnici</h3>
+            <div *ngIf="zaposleni!=null&&radnici.length>0">
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Telefon</th>
+                        <th>Strucnost</th>
+                    </tr>
+                    <tr *ngFor="let r of radnici">
+                        <td>{{r.ime}}</td>
+                        <td>{{r.prezime}}</td>
+                        <td>{{r.telefon}}</td>
+                        <td>{{r.strucnost}}</td>
+                        <td><button (click)="azurirajRadnika(r)">&#9998;</button></td>
+                        <td>
+                            <button *ngIf="r.objekat==null" (click)="obrisiRadnika(r)">&#10060;</button>
+                            <output type="text" *ngIf="r.objekat!=null">Radnik je uposlen</output>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

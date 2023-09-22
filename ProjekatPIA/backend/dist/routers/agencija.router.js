@@ -1,0 +1,32 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const agencija_controller_1 = require("../controllers/agencija.controller");
+const agencijaRouter = express_1.default.Router();
+agencijaRouter.route('/azurirajPodatke').post((req, res) => new agencija_controller_1.AgencijaController().azurirajPodatke(req, res));
+agencijaRouter.route('/azurirajPodatkeISliku').post((req, res) => new agencija_controller_1.AgencijaController().azurirajPodatkeISliku(req, res));
+agencijaRouter.route('/dohvatiPoslove').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiPoslove(req, res));
+agencijaRouter.route('/dohvatiObjekat').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiObjekat(req, res));
+agencijaRouter.route('/dohvatiKorisnika').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiKorisnika(req, res));
+agencijaRouter.route('/dohvatiKorisnike').get((req, res) => new agencija_controller_1.AgencijaController().dohvatiKorisnike(req, res));
+agencijaRouter.route('/dohvatiObjekte').get((req, res) => new agencija_controller_1.AgencijaController().dohvatiObjekte(req, res));
+agencijaRouter.route('/odbijZahtev').post((req, res) => new agencija_controller_1.AgencijaController().odbijZahtev(req, res));
+agencijaRouter.route('/prihvatiZahtev').post((req, res) => new agencija_controller_1.AgencijaController().prihvatiZahtev(req, res));
+agencijaRouter.route('/dohvZaposlene').post((req, res) => new agencija_controller_1.AgencijaController().dohvZaposlene(req, res));
+agencijaRouter.route('/dodeliRadnike').post((req, res) => new agencija_controller_1.AgencijaController().dodeliRadnike(req, res));
+agencijaRouter.route('/dohvatiPosao').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiPosao(req, res));
+agencijaRouter.route('/izmeniObjekat').post((req, res) => new agencija_controller_1.AgencijaController().izmeniObjekat(req, res));
+agencijaRouter.route('/oslobodiRadnike').post((req, res) => new agencija_controller_1.AgencijaController().oslobodiRadnike(req, res));
+agencijaRouter.route('/dohvatiRadnike').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiRadnike(req, res));
+agencijaRouter.route('/obrisiRadnika').post((req, res) => new agencija_controller_1.AgencijaController().obrisiRadnika(req, res));
+agencijaRouter.route('/azurirajRadnika').post((req, res) => new agencija_controller_1.AgencijaController().azurirajRadnika(req, res));
+agencijaRouter.route('/dodajRadnike').post((req, res) => new agencija_controller_1.AgencijaController().dodajRadnike(req, res));
+agencijaRouter.route('/dohvatiSlobodneRadnike').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiSlobodneRadnike(req, res));
+agencijaRouter.route('/uposliRadnika').post((req, res) => new agencija_controller_1.AgencijaController().uposliRadnika(req, res));
+agencijaRouter.route('/zahtevRadnaMesta').post((req, res) => new agencija_controller_1.AgencijaController().zahtevRadnaMesta(req, res));
+agencijaRouter.route('/dohvZahtevRadnaMesta').post((req, res) => new agencija_controller_1.AgencijaController().dohvatiZahtev(req, res));
+exports.default = agencijaRouter;
+//# sourceMappingURL=agencija.router.js.map

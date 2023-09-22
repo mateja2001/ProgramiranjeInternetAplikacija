@@ -1,0 +1,72 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+            </div>
+            <div>
+                {{agencija.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Radnici</h2>
+            <div *ngIf="zaposleni==null&&zahtev==null">
+                Trenutno nemate otvorenih radnih mesta.
+                <br/>
+                Posaljite zahtev za otvaranjem novih radnih mesta:
+                <input type="number" name="novaRadnaMesta" [(ngModel)]="novaRadnaMesta"><button (click)="posaljiZahtev()">Posalji</button>
+                <br/>
+                Ili kontaktirajte administratora za dodavanje radnih mesta.
+                <br/>
+                <output type="text" style="color: red;">{{error}}</output>
+            </div>
+            <div *ngIf="zaposleni==null&&zahtev!=null">
+                Trenutno nemate otvorenih radnih mesta.
+                <br/>
+                Zahtev za dodavanjem radnih mesta je poslat.
+            </div>
+            <div *ngIf="zaposleni!=null">
+                <div *ngIf="zaposleni.brojRadnihMesta>zaposleni.brojZaposlenih" style="font-size: larger;">
+                    Novog radnika mozete dodati <a (click)="dodajRadnika()" class="link">ovde</a>
+                </div>
+                <div *ngIf="zaposleni.brojRadnihMesta==zaposleni.brojZaposlenih&&zahtev==null">
+                    Sva radna mesta su popunjena.
+                    <br/>
+                    Posaljite zahtev za otvaranjem novih radnih mesta:
+                    <input type="number" name="novaRadnaMesta" [(ngModel)]="novaRadnaMesta"><button (click)="posaljiZahtev()">Posalji</button>
+                    <br/>
+                    Ili kontaktirajte administratora za dodavanje novog radnika.
+                    <br/>
+                    <output type="text" style="color: red;">{{error}}</output>
+                </div>
+                <div *ngIf="zaposleni.brojRadnihMesta==zaposleni.brojZaposlenih&&zahtev!=null">
+                    Sva radna mesta su popunjena.
+                    <br/>
+                    Zahtev za dodavanjem novih radnih mesta je poslat.
+                </div>
+                <table *ngIf="radnici.length>0" style="text-align: center;">
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Telefon</th>
+                        <th>Strucnost</th>
+                    </tr>
+                    <tr *ngFor="let r of radnici">
+                        <td class="tabela">{{r.ime}}</td>
+                        <td class="tabela">{{r.prezime}}</td>
+                        <td>{{r.telefon}}</td>
+                        <td>{{r.strucnost}}</td>
+                        <td class="tabela"><a class="link" (click)="azurirajRadnika(r)">Azuriraj</a></td>
+                        <td>
+                            <button *ngIf="r.objekat==null" (click)="obrisiRadnika(r)">Obrisi</button>
+                            <output type="text" *ngIf="r.objekat!=null">Radnik je uposlen</output>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

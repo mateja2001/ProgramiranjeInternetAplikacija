@@ -1,0 +1,26 @@
+{
+        "korisnik" : null,
+        "tip" : "kuca",
+		"adresa": "Srbija,Nis,Ustanicka 22",
+        "brojProstorija" : 2,
+		"kvadratura": 65,
+		"prostorije":[{
+			"xKoord":50,
+			"yKoord":50,
+			"duzina":100,
+			"sirina":100,
+			"xVrata":100,
+			"yVrata":150,
+			"status":"ne radi se"
+		},
+		{
+			"xKoord":50,
+			"yKoord":155,
+			"duzina":100,
+			"sirina":100,
+			"xVrata":100,
+			"yVrata":250,
+			"status":"ne radi se"
+		}
+		]
+}

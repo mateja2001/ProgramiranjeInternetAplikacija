@@ -1,0 +1,60 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadPoslovi()">Nazad na poslove</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Ostavite komentar i ocenu za posao</h2>
+            <div *ngIf="komentar==null">
+                <table>
+                    <tr>
+                        <td>Unesite komentar</td>
+                        <td><input type="text" name="tekst" [(ngModel)]="textKom"></td>
+                    </tr>
+                    <tr>
+                        <td>Unesite ocenu</td>
+                        <td><input type="number" name="ocena" [(ngModel)]="ocena"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button (click)="dodajKomentar()">Dodaj komentar</button></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{error}}</output>
+            </div>
+            <div *ngIf="komentar!=null">
+                Vec ste ostavili komentar za ovaj posao:
+                <div *ngIf="promena==false">
+                    Tekst: {{komentar.komentar}}
+                    <br/>
+                    Ocena: {{komentar.ocena}}         
+                </div>
+                <div *ngIf="promena==true">
+                    <table>
+                        <tr>
+                            <td>Unesite komentar</td>
+                            <td><input type="text" name="tekst" [(ngModel)]="textKom"></td>
+                        </tr>
+                        <tr>
+                            <td>Unesite ocenu</td>
+                            <td><input type="number" name="ocena" [(ngModel)]="ocena"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button (click)="promeniKomentar()">Izmeni komentar</button></td>
+                        </tr>
+                    </table>
+                    <output type="text" style="color: red;">{{error}}</output>      
+                </div>
+                <button (click)="izmeni()">Izmeni</button>
+                <button (click)="obrisiKomentar()">Obrisi</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

@@ -1,0 +1,319 @@
+[{
+  "_id": {
+    "$oid": "6471dd0b31c772c4819dde6d"
+  },
+  "korisnik": "zika",
+  "tip": "kuca",
+  "adresa": "Srbija,Pirot,Takovska 15",
+  "brojProstorija": 1,
+  "kvadratura": 60,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 150,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 80,
+      "yVrata": 250,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "6474b7f449cfa233dcfc0fbf"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6471dd0b31c772c4819dde6e"
+  },
+  "korisnik": "pera",
+  "tip": "kuca",
+  "adresa": "Srbija,Pirot,Ustanicka 10",
+  "brojProstorija": 2,
+  "kvadratura": 65,
+  "renoviranje": true,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 100,
+      "yVrata": 150,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "6479e5d3466e9089225ee99a"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 250,
+      "yVrata": 90,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "6479e5d3466e9089225ee99b"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "647349ce9d5f57f7f4ff7589"
+  },
+  "korisnik": "zika",
+  "tip": "kuca",
+  "adresa": "Srbija,Beograd,Dalmatinska 5",
+  "brojProstorija": 2,
+  "kvadratura": 50,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "64902ceae72c3fe4a88890bc"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 250,
+      "yVrata": 100,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "64902ceae72c3fe4a88890bd"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6473c551f433421db85b0cde"
+  },
+  "korisnik": "zika",
+  "tip": "kuca",
+  "adresa": "Srbija,Pirot,Vojvode Stepe 15",
+  "brojProstorija": 3,
+  "kvadratura": 100,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "64902cdfe72c3fe4a88890b7"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 300,
+      "yVrata": 150,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "64902cdfe72c3fe4a88890b8"
+      }
+    },
+    {
+      "xKoord": 100,
+      "yKoord": 150,
+      "duzina": 250,
+      "sirina": 100,
+      "xVrata": 200,
+      "yVrata": 250,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "64902cdfe72c3fe4a88890b9"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6474a5812e4377eadebf90c4"
+  },
+  "korisnik": "zika",
+  "tip": "kuca",
+  "adresa": "Srbija,Pirot,Jevrejska 10",
+  "brojProstorija": 2,
+  "kvadratura": 65,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "u toku",
+      "_id": {
+        "$oid": "64902cd4e72c3fe4a88890b1"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 250,
+      "yVrata": 100,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "64902cd4e72c3fe4a88890b2"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6481f02b490bddbbc9ac4088"
+  },
+  "korisnik": "mika",
+  "tip": "kuca",
+  "adresa": "Srbija,Pirot,Takovska 33",
+  "brojProstorija": 2,
+  "kvadratura": 56,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "6481f02b490bddbbc9ac4089"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 250,
+      "yVrata": 100,
+      "status": "ne radi se",
+      "_id": {
+        "$oid": "6481f02b490bddbbc9ac408a"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648323e14a4caa48dff3bfa4"
+  },
+  "korisnik": "mika",
+  "tip": "stan",
+  "adresa": "Srbija, Pirot, Ustanicka 20",
+  "brojProstorija": 3,
+  "kvadratura": 70,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "u toku",
+      "_id": {
+        "$oid": "648323e14a4caa48dff3bfa5"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 300,
+      "yVrata": 150,
+      "status": "u toku",
+      "_id": {
+        "$oid": "648323e14a4caa48dff3bfa6"
+      }
+    },
+    {
+      "xKoord": 100,
+      "yKoord": 150,
+      "duzina": 250,
+      "sirina": 100,
+      "xVrata": 200,
+      "yVrata": 250,
+      "status": "u toku",
+      "_id": {
+        "$oid": "648323e14a4caa48dff3bfa7"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "648324164a4caa48dff3bfaa"
+  },
+  "korisnik": "mika",
+  "tip": "stan",
+  "adresa": "Srbija,Pirot,7.Jul 14",
+  "brojProstorija": 3,
+  "kvadratura": 68,
+  "renoviranje": false,
+  "prostorije": [
+    {
+      "xKoord": 50,
+      "yKoord": 50,
+      "duzina": 200,
+      "sirina": 100,
+      "xVrata": 150,
+      "yVrata": 150,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "648324164a4caa48dff3bfab"
+      }
+    },
+    {
+      "xKoord": 250,
+      "yKoord": 50,
+      "duzina": 100,
+      "sirina": 100,
+      "xVrata": 300,
+      "yVrata": 150,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "648324164a4caa48dff3bfac"
+      }
+    },
+    {
+      "xKoord": 100,
+      "yKoord": 150,
+      "duzina": 250,
+      "sirina": 100,
+      "xVrata": 200,
+      "yVrata": 250,
+      "status": "zavrseno",
+      "_id": {
+        "$oid": "648324164a4caa48dff3bfad"
+      }
+    }
+  ],
+  "__v": 0
+}]

@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="header">
+        <div>
+            <a class="link" (click)="nazad()">Nazad na objekte</a>
+        </div>
+        <div>
+            {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="main">
+        <h2>Izmena objekta</h2>
+        <form>
+            <table>
+                <tr>
+                    <td>Tip objekta:</td>
+                    <td>Kuca<input type="radio" value="kuca" name="tip" [(ngModel)]="tip">
+                        Stan<input type="radio" value="stan" name="tip" [(ngModel)]="tip">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adresa:</td>
+                    <td><input type="text" name="adresa" [(ngModel)]="adresa"></td>
+                </tr>
+                <tr>
+                    <td>Broj prostorija:</td>
+                    <td><input type="number" name="broj" [(ngModel)]="brojProstorija" (change)="promenaProstorija()"></td>
+                </tr>
+                <tr>
+                    <td>Kvadratura:</td>
+                    <td><input type="number" name="kvadratura" [(ngModel)]="kvadratura"></td>
+                </tr>
+            </table>
+            <form>
+                Ucitaj novu skicu putem .JSON fajla:
+                <br/>
+                <input type="file" accept=".JSON" (change)="ucitajObjekat($event)">
+                <br/>
+            </form>
+            <output type="text" style="color: red;">{{errorObjekat}}</output>
+            <br/>
+            <button (click)="izmeniObjekat()">Izmeni objekat</button> 
+        </form>
+        <div class="canvas">
+            <canvas #canvas  width="600" height="400" style="outline: 1px solid black;"></canvas> 
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

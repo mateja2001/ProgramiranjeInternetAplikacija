@@ -1,0 +1,42 @@
+<div class="container">
+    <div>
+        <div class="header">
+            <div>
+                <a class="link" (click)="nazadDoAgenicija()">Nazad na agencije</a>
+            </div>
+            <div>
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Zahtev za saradnjom sa agencijom: {{agencija.nazivAgencije}}</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td>Izaberite objekat:</td>
+                        <td>
+                            <select [(ngModel)]="idO" name="obj">
+                                <option  *ngFor="let o of objekti" value="{{o._id}}">{{o.tip}}-{{o.adresa}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Navedite zeljeni datum pocetka radova</td>
+                        <td><input type="date" [(ngModel)]="datumPocetka" name="datumPo"></td>
+                    </tr>
+                    <tr>
+                        <td>Navedite zeljeni datum karaja radova</td>
+                        <td><input type="date" [(ngModel)]="datumKraja" name="datumKr"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button (click)="posaljiZahtev()">Posalji zahtev</button></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{error}}</output>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

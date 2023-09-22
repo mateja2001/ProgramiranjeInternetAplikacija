@@ -1,0 +1,108 @@
+<div class="container">
+    <div>
+<div class="header">
+        <div>
+            <a class="link" (click)="nazadDoMenija()">Nazad na glavni meni</a>
+        </div>
+        <div>
+            {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="main">
+        <h2>Moji poslovi</h2>
+        <div>
+            Svi<input type="radio" name="prikaz" value="svi" [(ngModel)]="prikaz">
+            Zahtevi<input type="radio" name="prikaz" value="zahtevi" [(ngModel)]="prikaz">
+            Trenutno aktivni<input type="radio" name="prikaz" value="aktivni" [(ngModel)]="prikaz">
+            Zavrseni<input type="radio" name="prikaz" value="zavrseni" [(ngModel)]="prikaz">    
+        </div>
+        <div *ngIf="prikaz=='svi'">
+            <table *ngIf="sviPoslovi.length>0&&sviPoslovi!=null" style="text-align: center;">
+                <tr>
+                    <th>Agencija</th>
+                    <th>Adresa objekta</th>
+                    <th>Pocetka radova</th>
+                    <th>Kraja radova</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let p of sviPoslovi" [class.prihvacen]="p.status=='zahtev'&&p.ponuda!=null&&p.prihvacen==null" [class.odbijen]="p.status=='zahtev'&&p.prihvacen==false">
+                    <td class="tabela">{{p.agencija}}</td>
+                    <td class="tabela">{{dohvatiAdresu(p.objekat)}}</td>
+                    <td>{{p.datumPocetka}}</td>
+                    <td>{{p.datumKraja}}</td>
+                    <td>{{p.status}}</td>
+                    <td *ngIf="p.status=='aktivan'"><a class="link" (click)="napredak(p)">Prikazi napredak</a></td>
+                    <td *ngIf="p.status=='zavrsen'"><a class="link" (click)="ostaviKomentar(p)">Ostavi komentar i ocenu</a></td>
+                    <td *ngIf="p.status=='zahtev'&&p.ponuda!=null&&p.prihvacen==null" class="link"><a class="link" (click)="pogledajPonudu(p)">Pogledaj ponudu</a></td>
+                </tr>
+            </table>
+            <output type="text" *ngIf="sviPoslovi.length==0||sviPoslovi==null">Trenutno nemate nikakvih zahteva, niti aktivnih poslova, niti zavrsenih poslova</output>
+        </div>
+        <div *ngIf="prikaz=='aktivni'">
+            <table *ngIf="aktivni.length>0&&aktivni!=null" style="text-align: center;">
+                <tr>
+                    <th>Agencija</th>
+                    <th>Adresa objekta</th>
+                    <th>Pocetka radova</th>
+                    <th>Kraja radova</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let p of aktivni">
+                    <td class="tabela">{{p.agencija}}</td>
+                    <td class="tabela">{{dohvatiAdresu(p.objekat)}}</td>
+                    <td>{{p.datumPocetka}}</td>
+                    <td>{{p.datumKraja}}</td>
+                    <td>{{p.status}}</td> 
+                    <td><a class="link" (click)="napredak(p)">Prikazi napredak</a></td>
+                   
+                </tr>
+            </table>
+            <output type="text" *ngIf="aktivni.length==0||aktivni==null">Trenutno nemate nikakvih aktivnih poslova</output>
+        </div>
+        <div *ngIf="prikaz=='zavrseni'">
+            <table *ngIf="zavrseni.length>0&&zavrseni!=null" style="text-align: center;">
+                <tr>
+                    <th>Agencija</th>
+                    <th>Adresa objekta</th>
+                    <th>Pocetka radova</th>
+                    <th>Kraja radova</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let p of zavrseni">
+                    <td class="tabela">{{p.agencija}}</td>
+                    <td class="tabela">{{dohvatiAdresu(p.objekat)}}</td>
+                    <td>{{p.datumPocetka}}</td>
+                    <td>{{p.datumKraja}}</td>
+                    <td>{{p.status}}</td>
+                    <td *ngIf="p.status=='zavrsen'"><a class="link" (click)="ostaviKomentar(p)">Ostavi komentar i ocenu</a></td>
+                </tr>
+            </table>
+            <output type="text" *ngIf="zavrseni.length==0||zavrseni==null">Trenutno nemate nikakvih zavrsenih poslova</output>
+        </div>
+        <div *ngIf="prikaz=='zahtevi'">
+            <table *ngIf="zahtevi.length>0&&zahtevi!=null" style="text-align: center;">
+                <tr>
+                    <th>Agencija</th>
+                    <th>Adresa objekta</th>
+                    <th>Pocetka radova</th>
+                    <th>Kraja radova</th>
+                    <th>Status</th>
+                </tr>
+                <tr *ngFor="let p of zahtevi" [class.prihvacen]="p.status=='zahtev'&&p.ponuda!=null&&p.prihvacen==null" [class.odbijen]="p.status=='zahtev'&&p.prihvacen==false">
+                    <td class="tabela">{{p.agencija}}</td>
+                    <td class="tabela">{{dohvatiAdresu(p.objekat)}}</td>
+                    <td>{{p.datumPocetka}}</td>
+                    <td>{{p.datumKraja}}</td>
+                    <td>{{p.status}}</td>
+                    <td *ngIf="p.status=='zahtev'&&p.ponuda!=null&&p.prihvacen==null" class="link"><a class="link" (click)="pogledajPonudu(p)">Pogledaj ponudu</a></td>
+                </tr>
+            </table>
+            <output type="text" *ngIf="zahtevi.length==0||zahtevi==null">Trenutno nemate nikakvih zahteva za posao</output>
+        </div>    
+    </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>
+

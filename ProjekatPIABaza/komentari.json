@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "646f7f9b7b341c9bb9a19448"
+  },
+  "agencija": "prvaAgencija",
+  "klijent": "pera",
+  "komentar": "Svidja mi se ova prva agencija",
+  "ocena": 5
+},{
+  "_id": {
+    "$oid": "646f7f9b7b341c9bb9a19449"
+  },
+  "agencija": "prvaAgencija",
+  "klijent": "zika",
+  "komentar": "Nije losa ova prva agencija",
+  "ocena": 4
+},{
+  "_id": {
+    "$oid": "646f7f9b7b341c9bb9a1944a"
+  },
+  "agencija": "drugaAgencija",
+  "klijent": "mika",
+  "komentar": "Korektno odradjen poso",
+  "ocena": 4
+},{
+  "_id": {
+    "$oid": "647c88ac7611a0b945903541"
+  },
+  "agencija": "sestaAgencija",
+  "klijent": "zika",
+  "idPosla": "647c876f7611a0b9459034b7",
+  "komentar": "Odlicno uradjen posao",
+  "ocena": 5,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64905feee72c3fe4a8889272"
+  },
+  "agencija": "petaAgencija",
+  "klijent": "zika",
+  "idPosla": "64775e69d01e67922fa17098",
+  "komentar": "Ok uradjen posao, dopada mi se",
+  "ocena": 4,
+  "__v": 0
+}]

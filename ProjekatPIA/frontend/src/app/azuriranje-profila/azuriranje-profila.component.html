@@ -1,0 +1,99 @@
+<div class="container">
+    <div>
+        <div *ngIf="admin=='admin'" class="header">
+            <div>
+                <a class="link" (click)="nazadNaProfil()">Nazad</a>
+            </div>
+            <div>
+                {{adminKor.ime}} {{adminKor.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div *ngIf="admin==null" class="header">
+            <div>
+                <a class="link" (click)="nazadNaProfil()">Nazad na profil</a>
+            </div>
+            <div *ngIf="korisnik.tip=='klijent'">
+                {{korisnik.ime}} {{korisnik.prezime}} <button (click)="logout()">Logout</button>
+            </div>
+            <div *ngIf="korisnik.tip=='agencija'">
+                {{korisnik.nazivAgencije}} <button (click)="logout()">Logout</button>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Azuriranje profila</h2>
+            <form *ngIf="korisnik.tip=='klijent'">
+                <table>
+                    <tr>
+                        <td>Ime:</td>
+                        <td><input type="text" name="ime" [(ngModel)]="ime"></td>
+                    </tr>
+                    <tr>
+                        <td>Prezime:</td>
+                        <td><input type="text" name="prezime" [(ngModel)]="prezime"></td>
+                    </tr>
+                    <tr>
+                        <td>Mejl:</td>
+                        <td><input type="text" name="mejl" [(ngModel)]="mejl"></td>
+                    </tr>
+                    <tr>
+                        <td>Tel:</td>
+                        <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{error}}</output>
+                <br/>
+                Ne menjaj profilnu sliku:<input type="radio" name="slika" value="ostavi" [(ngModel)]="promenaSlike">
+                Promeni profilnu sliku:<input type="radio" name="slika" value="promeni" [(ngModel)]="promenaSlike">
+                Obrisi profilnu sliku:<input type="radio" name="slika" value="obrisi" [(ngModel)]="promenaSlike">
+                <br/>
+                <div *ngIf="promenaSlike=='promeni'">
+                    Dodajte sliku:
+                    <input type="file" accept=".png,.jpg,.jpeg" (change)="ucitajSliku($event)">
+                    <div><img [src]="url" *ngIf="url"></div>
+                    <output type="text" style="color: red;">{{errorSlika}}</output>
+                </div>
+                <button (click)="azurirajPodatkeKlijent()">Azuriraj podatke</button>
+            </form>
+            <form *ngIf="korisnik.tip=='agencija'">
+                <table>
+                    <tr>
+                        <td>Naziv agencije:</td>
+                        <td><input type="text" name="naziv" [(ngModel)]="nazivAgencije"></td>
+                    </tr>
+                    <tr>
+                        <td>Adresa:</td>
+                        <td><input type="text" name="adresa" [(ngModel)]="adresaAgencije"></td>
+                    </tr>
+                    <tr>
+                        <td>Kratak opis:</td>
+                        <td><input type="text" name="opis" [(ngModel)]="opisAgencije"></td>
+                    </tr>
+                    <tr>
+                        <td>Mejl:</td>
+                        <td><input type="text" name="mejl" [(ngModel)]="mejl"></td>
+                    </tr>
+                    <tr>
+                        <td>Tel:</td>
+                        <td><input type="text" name="telefon" [(ngModel)]="telefon"></td>
+                    </tr>
+                </table>
+                <output type="text" style="color: red;">{{error}}</output>
+                <br/>
+                Ne menjaj profilnu sliku:<input type="radio" name="slika" value="ostavi" [(ngModel)]="promenaSlike">
+                Promeni profilnu sliku:<input type="radio" name="slika" value="promeni" [(ngModel)]="promenaSlike">
+                Obrisi profilnu sliku:<input type="radio" name="slika" value="obrisi" [(ngModel)]="promenaSlike">
+                <br/>
+                <div *ngIf="promenaSlike=='promeni'">
+                    Dodajte sliku:
+                    <input type="file" accept=".png,.jpg,.jpeg" (change)="ucitajSliku($event)">
+                    <div><img [src]="url" *ngIf="url"></div>
+                    <output type="text" style="color: red;">{{errorSlika}}</output>
+                </div>
+                <button (click)="azurirajPodatkeAgencija()">Azuriraj podatke</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>

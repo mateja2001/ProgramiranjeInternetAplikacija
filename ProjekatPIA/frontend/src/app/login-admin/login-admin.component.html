@@ -1,0 +1,30 @@
+<div class="container">
+        <div class="header">
+            <a class="link" (click)="pocetna()">Pocetna</a>
+        </div>
+        <div class="main">
+            <h1>Dobrodosli na sajt za renoviranje objekata</h1>
+            <h2>Prijava administratora</h2>
+            <form>
+                <table>
+                    <tr>
+                        <td>Korisnicko ime:</td>
+                        <td><input type="text" name="korIme" [(ngModel)]="korIme"></td>
+                    </tr>
+                    <tr>
+                        <td>Lozinka:</td>
+                        <td><input type="password" name="lozinka" [(ngModel)]="lozinka"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button (click)="login()">Login</button>
+                        </td>
+                        </tr>
+                </table>
+                <output type="text" value="{{poruka}}" style="color: red;"></output>
+            </form>
+        </div>
+    <div class="footer">
+        &#169; Copyright Mateja Tosic 2023. All Rights Reserved 
+    </div>
+</div>
